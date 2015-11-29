@@ -3,6 +3,8 @@ var path = require('path');
 
 var gulp = require('gulp');
 
+var connect = require('gulp-connect');
+
 // Load all gulp plugins automatically
 // and attach them to the `plugins` object
 var plugins = require('gulp-load-plugins')();
@@ -149,6 +151,11 @@ gulp.task('lint:js', function () {
       .pipe(plugins.jshint.reporter('fail'));
 });
 
+gulp.task('reload', function() {
+    return gulp.src(dirs.dist)
+               .pipe(connect.reload());
+});
+
 
 // ---------------------------------------------------------------------
 // | Main tasks                                                        |
@@ -165,8 +172,19 @@ gulp.task('archive', function (done) {
 gulp.task('build', function (done) {
     runSequence(
         ['clean', 'lint:js'],
-        'copy',
+        'copy', 'reload',
     done);
 });
 
-gulp.task('default', ['build']);
+gulp.task('watch', function() {
+    gulp.watch(dirs.src + '/**/*.*', ['build']);
+});
+
+gulp.task('connect', function() {
+    connect.server({
+        root: dirs.dist,
+        livereload: true
+    });
+});
+
+gulp.task('default', ['build', 'connect', 'watch']);
