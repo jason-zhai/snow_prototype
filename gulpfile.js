@@ -81,6 +81,7 @@ gulp.task('copy', [
     'copy:license',
     'copy:fontawesome',
     'copy:glyphicons',
+    'copy:semantic',
     'copy:main.css',
     'copy:misc',
     'copy:normalize'
@@ -122,6 +123,13 @@ gulp.task('copy:glyphicons', function () {
                .pipe(gulp.dest(dirs.dist + '/css'));
     gulp.src(['node_modules/ccm_assets/glyphicons/web/html_css/fonts/**/*'])
                .pipe(gulp.dest(dirs.dist + '/fonts'));
+});
+
+gulp.task('copy:semantic', function () {
+    gulp.src(['semantic/dist/semantic.min.css'])
+               .pipe(gulp.dest(dirs.dist + '/css'));
+    gulp.src(['semantic/dist/semantic.min.js'])
+               .pipe(gulp.dest(dirs.dist + '/js/vendor'));
 });
 
 gulp.task('copy:main.css', function () {
