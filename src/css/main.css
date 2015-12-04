@@ -88,8 +88,10 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
-
-
+/*******************************
+    Include Semantic UI Here
+*******************************/
+{% include "../../semantic/dist/semantic.min.css" %}
 
 
 

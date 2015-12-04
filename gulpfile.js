@@ -130,8 +130,6 @@ gulp.task('copy:glyphicons', function () {
 });
 
 gulp.task('copy:semantic', function () {
-    gulp.src(['semantic/dist/semantic.min.css'])
-               .pipe(gulp.dest(dirs.dist + '/css'));
     gulp.src(['semantic/dist/semantic.min.js'])
                .pipe(gulp.dest(dirs.dist + '/js/vendor'));
 });
