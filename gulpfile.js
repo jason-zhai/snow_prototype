@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var connect = require('gulp-connect');
 var swig = require('gulp-swig');
 var rename = require('gulp-rename');
+var ghPages = require('gulp-gh-pages');
 
 // Load all gulp plugins automatically
 // and attach them to the `plugins` object
@@ -194,6 +195,11 @@ gulp.task('lint:js', function () {
 gulp.task('reload', function() {
     return gulp.src(dirs.dist)
                .pipe(connect.reload());
+});
+
+gulp.task('deploy', function() {
+    return gulp.src('./dist/**/*')
+               .pipe(ghPages());
 });
 
 
