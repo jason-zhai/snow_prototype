@@ -132,6 +132,8 @@ gulp.task('copy:glyphicons', function () {
 gulp.task('copy:semantic', function () {
     gulp.src(['semantic/dist/semantic.min.js'])
                .pipe(gulp.dest(dirs.dist + '/js/vendor'));
+    gulp.src(['semantic/dist/themes/**/*'])
+               .pipe(gulp.dest(dirs.dist + '/css/themes'));
 });
 
 gulp.task('copy:main.css', function () {
@@ -161,6 +163,7 @@ gulp.task('copy:misc', function () {
 
         // Exclude the following files
         // (other tasks will handle the copying of these files)
+        '!' + dirs.src + '/css/partials/*',
         '!' + dirs.src + '/css/main.css',
         '!' + dirs.src + '/index.html'
 
