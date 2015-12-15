@@ -3,9 +3,10 @@ var path = require('path');
 
 var gulp = require('gulp');
 var connect = require('gulp-connect');
-var swig = require('gulp-swig');
 var rename = require('gulp-rename');
 var ghPages = require('gulp-gh-pages');
+var nunjucksRender = require('gulp-nunjucks-render');
+var data = require('gulp-data');
 
 // Load all gulp plugins automatically
 // and attach them to the `plugins` object
@@ -17,15 +18,12 @@ var runSequence = require('run-sequence');
 
 var pkg = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
-var patterns = {
-    defaults: {
-        cache: false
-    },
-    data: {
-        html: [],
-        css: []
-    }
-};
+
+// App's data
+function getDataForFile() {
+    return require('./app.json');
+}
+
 
 // ---------------------------------------------------------------------
 // | Helper tasks                                                      |
@@ -79,6 +77,12 @@ gulp.task('clean', function (done) {
     });
 });
 
+gulp.task('pattern', function () {
+    return gulp.src(dirs.src + '/patterns/**/*.html')
+               .pipe(nunjucksRender())
+               .pipe(gulp.dest(dirs.dist + '/patterns'));
+});
+
 gulp.task('copy', [
     'copy:.htaccess',
     'copy:index.html',
@@ -101,7 +105,8 @@ gulp.task('copy:.htaccess', function () {
 gulp.task('copy:index.html', function () {
     return gulp.src(dirs.src + '/index.html')
                .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-               .pipe(swig(patterns))
+               .pipe(data(getDataForFile))
+               .pipe(nunjucksRender())
                .pipe(gulp.dest(dirs.dist));
 });
 
@@ -144,7 +149,8 @@ gulp.task('copy:main.css', function () {
                     ' | ' + pkg.homepage + ' */\n\n';
 
     return gulp.src(dirs.src + '/css/main.css')
-               .pipe(swig(patterns))
+               .pipe(data(getDataForFile))
+               .pipe(nunjucksRender())
                .pipe(rename({
                    extname: '.css'
                }))
@@ -164,6 +170,7 @@ gulp.task('copy:misc', function () {
 
         // Exclude the following files
         // (other tasks will handle the copying of these files)
+        '!' + dirs.src + '/css/partials',
         '!' + dirs.src + '/css/partials/*',
         '!' + dirs.src + '/css/main.css',
         '!' + dirs.src + '/index.html'

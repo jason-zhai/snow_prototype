@@ -25,8 +25,7 @@
             <h1>CliQr UI Patterns Library</h1>
             {% for name in html %}
                 <h2 class="ui dividing header">{{ name }}</h2>
-                {% set pattern = 'patterns/' + name + '.html' %}
-                {% include pattern %}
+                {% include "./src/patterns/" + name + ".html" %}
             {% endfor %}
         </div>
 
