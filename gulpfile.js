@@ -23,6 +23,7 @@ var dirs = pkg['h5bp-configs'].directories;
 function getDataForFile() {
     return require('./app.json');
 }
+nunjucksRender.nunjucks.configure(['src/templates/']);
 
 
 // ---------------------------------------------------------------------
@@ -75,12 +76,6 @@ gulp.task('clean', function (done) {
     ]).then(function () {
         done();
     });
-});
-
-gulp.task('pattern', function () {
-    return gulp.src(dirs.src + '/patterns/**/*.html')
-               .pipe(nunjucksRender())
-               .pipe(gulp.dest(dirs.dist + '/patterns'));
 });
 
 gulp.task('copy', [
@@ -138,6 +133,8 @@ gulp.task('copy:glyphicons', function () {
 gulp.task('copy:semantic', function () {
     gulp.src(['semantic/dist/semantic.min.js'])
                .pipe(gulp.dest(dirs.dist + '/js/vendor'));
+    gulp.src(['semantic/dist/semantic.min.css'])
+               .pipe(gulp.dest(dirs.dist + '/css'));
     gulp.src(['semantic/dist/themes/**/*'])
                .pipe(gulp.dest(dirs.dist + '/css/themes'));
 });
@@ -170,9 +167,9 @@ gulp.task('copy:misc', function () {
 
         // Exclude the following files
         // (other tasks will handle the copying of these files)
-        '!' + dirs.src + '/css/partials',
-        '!' + dirs.src + '/css/partials/*',
         '!' + dirs.src + '/css/main.css',
+        '!' + dirs.src + '/templates',
+        '!' + dirs.src + '/templates/**/*',
         '!' + dirs.src + '/index.html'
 
     ], {

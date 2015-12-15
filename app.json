@@ -1,4 +1,4 @@
 {
-	"html": [],
-	"css": []
+	"html": ["card"],
+	"css": ["card"]
 }
