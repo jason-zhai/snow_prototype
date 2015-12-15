@@ -20,8 +20,8 @@ var pkg = require('./package.json');
 var dirs = pkg['h5bp-configs'].directories;
 
 // App's data
-function getDataForFile() {
-    return require('./app.json');
+function LoadDataForApp() {
+    return require('./src/app.json');
 }
 nunjucksRender.nunjucks.configure(['src/templates/']);
 
@@ -100,7 +100,7 @@ gulp.task('copy:.htaccess', function () {
 gulp.task('copy:index.html', function () {
     return gulp.src(dirs.src + '/index.html')
                .pipe(plugins.replace(/{{JQUERY_VERSION}}/g, pkg.devDependencies.jquery))
-               .pipe(data(getDataForFile))
+               .pipe(data(LoadDataForApp))
                .pipe(nunjucksRender())
                .pipe(gulp.dest(dirs.dist));
 });
@@ -146,7 +146,7 @@ gulp.task('copy:main.css', function () {
                     ' | ' + pkg.homepage + ' */\n\n';
 
     return gulp.src(dirs.src + '/css/main.css')
-               .pipe(data(getDataForFile))
+               .pipe(data(LoadDataForApp))
                .pipe(nunjucksRender())
                .pipe(rename({
                    extname: '.css'
@@ -170,7 +170,8 @@ gulp.task('copy:misc', function () {
         '!' + dirs.src + '/css/main.css',
         '!' + dirs.src + '/templates',
         '!' + dirs.src + '/templates/**/*',
-        '!' + dirs.src + '/index.html'
+        '!' + dirs.src + '/index.html',
+        '!' + dirs.src + '/app.json'
 
     ], {
 
