@@ -170,6 +170,8 @@ gulp.task('copy:misc', function () {
         '!' + dirs.src + '/css/main.css',
         '!' + dirs.src + '/templates',
         '!' + dirs.src + '/templates/**/*',
+        '!' + dirs.src + '/pages',
+        '!' + dirs.src + '/pages/**/*',
         '!' + dirs.src + '/index.html',
         '!' + dirs.src + '/app.json'
 
