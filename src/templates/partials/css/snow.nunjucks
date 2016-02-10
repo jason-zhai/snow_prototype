@@ -1,0 +1,6 @@
+.ui.toggled.segment {
+	display: none;
+}
+.ui.toggled.segment.active {
+	display: block;
+}

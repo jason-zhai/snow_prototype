@@ -64,7 +64,7 @@
         </a>
     </div>
 
-        <div class="ui segment active" id="tabOne">
+        <div class="ui toggled segment active" id="tabOne">
             <div class="ui form">
                 <div class="field">
                     <label>Gender</label>
@@ -84,7 +84,7 @@
                 </div>
             </div>
         </div>
-        <div class="ui segment" id="tabTwo">
+        <div class="ui toggled segment" id="tabTwo">
             <div class="ui form">
                 <div class="field">
                     <label>Gender</label>
