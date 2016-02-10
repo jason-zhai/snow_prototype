@@ -40,7 +40,7 @@
 
   Tab.prototype.show = function () {
     var $this    = this.element;
-    var $ul      = $this.closest('ul:not(.dropdown-menu)');
+    var $ul      = $this.closest('.ui.menu');
     var selector = $this.data('target');
 
     if (!selector) {
@@ -48,7 +48,7 @@
       selector = selector && selector.replace(/.*(?=#[^\s]*$)/, ''); // strip for ie7
     }
 
-    if ($this.parent('li').hasClass('active')) return;
+    if ($this.hasClass('active')) return;
 
     var $previous = $ul.find('.active:last a');
     var hideEvent = $.Event('hide.bs.tab', {
@@ -65,7 +65,7 @@
 
     var $target = $(selector);
 
-    this.activate($this.closest('li'), $ul);
+    this.activate($this, $ul);
     this.activate($target, $target.parent(), function () {
       $previous.trigger({
         type: 'hidden.bs.tab',

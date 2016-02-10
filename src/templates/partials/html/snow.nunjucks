@@ -55,18 +55,14 @@
     </div>
     <div class="ui hidden section divider"></div>
     <div class="ui medium header">Gloud & Instance Mapping</div>
-    <ul class="ui secondary pointing menu">
-        <li class="item active">
-            <a href="#tabOne" data-toggle="tab">
-                Tab 1
-            </a>
-        </li>
-        <li class="item">
-            <a href="#tabTwo" data-toggle="tab">
-                Tab 2
-            </a>
-        </li>
-    </ul>
+    <div class="ui secondary pointing menu">
+        <a class="item active" href="#tabOne" data-toggle="tab">
+            Tab 1
+        </a>
+        <a class="item" href="#tabTwo" data-toggle="tab">
+            Tab 2
+        </a>
+    </div>
 
         <div class="ui segment active" id="tabOne">
             <div class="ui form">
@@ -108,7 +104,7 @@
                 </div>
             </div>
         </div>
-    
+
 </div>
 <div class="ui stackable bottom fixed menu">
     <div class="ui container">
