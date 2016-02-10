@@ -197,8 +197,7 @@ gulp.task('lint:js', function () {
         dirs.test + '/*.js'
     ]).pipe(plugins.jscs())
       .pipe(plugins.jshint())
-      .pipe(plugins.jshint.reporter('jshint-stylish'))
-      .pipe(plugins.jshint.reporter('fail'));
+      .pipe(plugins.jshint.reporter('jshint-stylish'));
 });
 
 gulp.task('reload', function() {
