@@ -64,7 +64,7 @@
         </a>
     </div>
     <div class="ui toggled segment active" id="tab1">
-        <div class="ui form">
+        <form class="ui form">
             <div class="required field">
                 <label>Cloud</label>
                 <select class="ui dropdown">
@@ -118,7 +118,7 @@
                     <option value="">vpc-8f7aeeea</option>
                 </select>
             </div>
-        </div>
+        </form>
     </div>
 </div>
 <div class="ui hidden section divider"></div>
