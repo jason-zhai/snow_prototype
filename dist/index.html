@@ -91,22 +91,39 @@
 
         <div class="ui toggled segment active" id="tab1">
             <div class="ui form">
-                <div class="field">
-                    <label>Gender</label>
+                <div class="required field">
+                    <label>Cloud</label>
                     <select class="ui dropdown">
-                        <option value="">Gender</option>
-                        <option value="1">Male</option>
-                        <option value="0">Female</option>
+                        <option value="">Amazon</option>
+                        <option value="1">Openstack</option>
                     </select>
                 </div>
-                <div class="inline field">
-                    <label>Gender</label>
+                <div class="required field">
+                    <label>Region</label>
                     <select class="ui dropdown">
-                        <option value="">Gender</option>
-                        <option value="1">Male</option>
-                        <option value="0">Female</option>
+                        <option value="">US West (Oregon)</option>
+                        <option value="1">US East</option>
                     </select>
                 </div>
+                <h4 class="ui dividing required header">Instance Mapping</h4>
+                <div class="inline aligned field">
+                    <label>Small</label>
+                    <select class="ui dropdown">
+                        <option value="">Select Instance</option>
+                        <option value="1">Amazon</option>
+                        <option value="0">Google</option>
+                    </select>
+                </div>
+                <div class="ui divider"></div>
+                <div class="inline aligned field">
+                    <label>Medium</label>
+                    <select class="ui dropdown">
+                        <option value="">Select Instance</option>
+                        <option value="1">Amazon</option>
+                        <option value="0">Google</option>
+                    </select>
+                </div>
+                <div class="ui divider"></div>
             </div>
         </div>
 

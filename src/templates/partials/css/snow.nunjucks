@@ -4,3 +4,7 @@
 .ui.toggled.segment.active {
 	display: block;
 }
+
+.ui.form > .aligned.field > label {
+	min-width: 100px;
+}
