@@ -4,12 +4,13 @@
 
 (function() {
     var defaultMapping = $('#tab1').clone();
-    var tabInitNumber = $('[data-toggle="tab"]').length;
+    var tabInitNumber = $('#mapping [data-toggle="tab"]').length;
     var tabRemove = function(e) {
         var tabItem = $(this).parent();
         e.stopPropagation();
+        e.preventDefault();
         if(tabItem.hasClass('active')) {
-            if((tabItem.index() + 1) === $('[data-toggle="tab"]').length) {
+            if((tabItem.index() + 1) === $('#mapping [data-toggle="tab"]').length) {
                 tabItem.prev().addClass('active');
                 $(tabItem.attr('href')).prev().addClass('active');
             } else {
@@ -23,7 +24,7 @@
         tabOneLeft();
     };
     var tabOneLeft = function() {
-        if($('[data-toggle="tab"]').length === 1) {
+        if($('#mapping [data-toggle="tab"]').length === 1) {
             $('i.remove').hide();
         } else {
             $('i.remove').show();
@@ -54,5 +55,5 @@
         tabOneLeft();
     });
 
-    $('[data-toggle="tab"] > i.remove').click(tabRemove);
+    $('#mapping [data-toggle="tab"] > i.remove').click(tabRemove);
 }());
