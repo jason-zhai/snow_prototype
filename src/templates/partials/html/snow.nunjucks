@@ -98,9 +98,30 @@
                 </select>
             </div>
             <div class="ui divider"></div>
+            <div class="field">
+                <label>VPC</label>
+                <select class="ui dropdown">
+                    <option value="">vpc-8f7aeeea</option>
+                </select>
+            </div>
+            <div class="required field">
+                <label>Availability Zone</label>
+                <select class="ui dropdown">
+                    <option value="">us-west-2a</option>
+                    <option value="1">Amazon</option>
+                    <option value="0">Google</option>
+                </select>
+            </div>
+            <div class="field">
+                <label>Network</label>
+                <select class="ui dropdown">
+                    <option value="">vpc-8f7aeeea</option>
+                </select>
+            </div>
         </div>
     </div>
 </div>
+<div class="ui hidden section divider"></div>
 <div class="ui stackable bottom fixed menu">
     <div class="ui container">
         <div class="right menu">

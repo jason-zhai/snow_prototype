@@ -8,3 +8,12 @@
 .ui.form > .aligned.field > label {
 	min-width: 100px;
 }
+
+.ui.form > .required.header:after {
+	margin: -.2em 0 0 .2em;
+    content: '*';
+    color: #DB2828;
+	display: inline-block;
+    vertical-align: top;
+	font-size: .9em;
+}
