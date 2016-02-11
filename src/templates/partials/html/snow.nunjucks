@@ -29,8 +29,8 @@
 <div class="ui text container">
     <div class="ui medium header">General Settings</div>
     <div class="ui segment">
-        <div class="ui three link cards">
-            <div class="card">
+        <div class="ui three link cards secondary menu">
+            <a class="card active" href="#experienceCart" data-toggle="tab">
                 <div class="center aligned content">
                     <i class="huge shop icon"></i>
                     <div class="ui hidden divider"></div>
@@ -39,8 +39,8 @@
                         Shop for services, add to cart. Enter a quote to finalize
                     </div>
                 </div>
-            </div>
-            <div class="card">
+            </a>
+            <a class="card" href="#experienceDefault" data-toggle="tab">
                 <div class="center aligned content">
                     <i class="huge shop icon"></i>
                     <div class="ui hidden divider"></div>
@@ -49,8 +49,21 @@
                         Shop for services, add to cart. Enter a quote to finalize
                     </div>
                 </div>
-            </div>
+            </a>
         </div>
+        <div class="ui hidden divider"></div>
+        <form class="ui toggled form active" id="experienceCart">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" name="first-name" placeholder="First Name">
+            </div>
+        </form>
+        <form class="ui toggled form" id="experienceDefault">
+            <div class="field">
+                <label>First Name</label>
+                <input type="text" name="first-name" placeholder="First Name">
+            </div>
+        </form>
     </div>
     <div class="ui hidden section divider"></div>
     <div class="ui medium header">Gloud & Instance Mapping</div>

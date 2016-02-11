@@ -1,7 +1,7 @@
-.ui.toggled.segment {
+.ui.toggled {
 	display: none;
 }
-.ui.toggled.segment.active {
+.ui.toggled.active {
 	display: block;
 }
 
@@ -16,4 +16,9 @@
 	display: inline-block;
     vertical-align: top;
 	font-size: .9em;
+}
+
+.ui.cards.menu > .active,
+.ui.cards.menu > .active:hover {
+	box-shadow: 0 1px 3px 0 #4183C4,0 0 0 1px #4183C4;
 }
