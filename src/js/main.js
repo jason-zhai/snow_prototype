@@ -4,8 +4,6 @@
 
 (function() {
     var defaultMapping = $('#tab1').clone();
-    $('select.dropdown').dropdown();
-
     var tabInitNumber = $('[data-toggle="tab"]').length;
     var tabRemove = function(e) {
         var tabItem = $(this).parent();
@@ -32,6 +30,7 @@
         }
     };
 
+    $('select.dropdown').dropdown();
     tabOneLeft();
 
     $('[data-toggle="add"]').click(function() {
@@ -49,7 +48,6 @@
         tabNew.insertBefore($(this));
         $("[id^='tab']").removeClass('active');
 
-        tabContent.attr('id', 'tab' + tabInitNumber);
         tabContent.find('select.dropdown').dropdown();
         $('.ui.text.container').append(tabContent);
 
