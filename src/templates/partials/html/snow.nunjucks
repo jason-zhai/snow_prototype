@@ -42,11 +42,11 @@
             </a>
             <a class="card" href="#experienceDefault" data-toggle="tab">
                 <div class="center aligned content">
-                    <i class="huge shop icon"></i>
+                    <i class="huge fork icon"></i>
                     <div class="ui hidden divider"></div>
-                    <div class="header">Cart Quote Style</div>
+                    <div class="header">Default</div>
                     <div class="description">
-                        Shop for services, add to cart. Enter a quote to finalize
+                        Pick Applications to deploy on any supported cloud
                     </div>
                 </div>
             </a>
@@ -64,16 +64,16 @@
             <div class="required field">
                 <label>API Key</label>
                 <div class="fields">
-                    <div class="field">
+                    <div class="four wide field">
                         <input type="text" name="api-key-1">
                     </div>
-                    <div class="field">
+                    <div class="four wide field">
                         <input type="text" name="api-key-2">
                     </div>
-                    <div class="field">
+                    <div class="four wide field">
                         <input type="text" name="api-key-3">
                     </div>
-                    <div class="field">
+                    <div class="four wide field">
                         <input type="text" name="api-key-4">
                     </div>
                 </div>
@@ -86,9 +86,36 @@
             </div>
         </form>
         <form class="ui toggled form" id="experienceDefault">
-            <div class="field">
-                <label>First Name</label>
-                <input type="text" name="first-name" placeholder="First Name">
+            <div class="required field">
+                <label>CCM URL</label>
+                <input type="text" name="ccm-url" placeholder="CCM URL">
+            </div>
+            <div class="required field">
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Username">
+            </div>
+            <div class="required field">
+                <label>API Key</label>
+                <div class="fields">
+                    <div class="four wide field">
+                        <input type="text" name="api-key-1">
+                    </div>
+                    <div class="four wide field">
+                        <input type="text" name="api-key-2">
+                    </div>
+                    <div class="four wide field">
+                        <input type="text" name="api-key-3">
+                    </div>
+                    <div class="four wide field">
+                        <input type="text" name="api-key-4">
+                    </div>
+                </div>
+            </div>
+            <div class="required field">
+                <label>Quotes Require Purchase Orders?</label>
+                <div class="ui toggle checkbox">
+                    <input type="checkbox" tabindex="0" class="hidden">
+                </div>
             </div>
         </form>
     </div>
