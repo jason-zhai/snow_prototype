@@ -1,5 +1,6 @@
-
-
+$('.ui.checkbox')
+  .checkbox()
+;
 
 
 (function() {
