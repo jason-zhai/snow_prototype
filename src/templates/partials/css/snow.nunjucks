@@ -44,3 +44,9 @@
 .ui.form > .required.field > label + .ui.toggle.checkbox:after {
 	display: none;
 }
+
+@media only screen and (max-width: 767px) {
+	.ui.form .fields > .four.wide.field:last-child {
+		margin-bottom: 0;
+	}
+}
