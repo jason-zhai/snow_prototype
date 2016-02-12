@@ -49,6 +49,7 @@
         tabNew.insertBefore($(this));
         $("[id^='tab']").removeClass('active');
 
+        tabContent.attr('id', 'tab' + tabInitNumber);
         tabContent.find('select.dropdown').dropdown();
         $('.ui.text.container').append(tabContent);
 
